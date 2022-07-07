@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <script>
+        function triangulo(){
+            let base = parseFloat(document.getElementById("trianguloBase").value);
+            let altura = parseFloat(document.getElementById("trianguloAltura").value);
+            document.getElementById("areaTriangulo").value = base * altura / 2;
+        }
+        function quadrado(){
+            let lado = parseFloat(document.getElementById("quadradoLado").value);
+            document.getElementById("areaQuadrado").value = lado * lado;
+        }
+        function circulo(){
+            let raio = parseFloat(document.getElementById("circuloRaio").value);
+            document.getElementById("areaCirculo").value = (raio * raio * Math.PI).toFixed(1);
+        }
+        function trapezio(){
+            let baseMaior = parseFloat(document.getElementById("trapezioBaseMaior").value);
+            let baseMenor = parseFloat(document.getElementById("trapezioBaseMenor").value);
+            let altura = parseFloat(document.getElementById("trapezioAltura").value);
+            document.getElementById("areaTrapezio").value = (baseMaior + baseMenor) * altura / 2;
+        }
+        function retangulo(){
+            let base = parseFloat(document.getElementById("retanguloBase").value);
+            let altura = parseFloat(document.getElementById("retanguloAltura").value);
+            document.getElementById("areaRetangulo").value = base * altura;
+        }
+    </script>
+</head>
+<body>
+    <table border="1px">
+        <tr>
+            <th>Triângulo</th>
+            <th>Quadrado</th>
+            <th>Círculo</th>
+            <th>Trapézio</th>
+            <th>Retângulo</th>
+        </tr>
+        <tr style="align-items: center; text-align: center;">
+            <td><img src="imagens/triangle.png" alt="Triângulo" height="200px" width="200px"></td>
+            <td><img src="imagens/square.png" alt="Quadrado" height="200px" width="200px"></td>
+            <td><img src="imagens/circle.png" alt="Círculo" height="200px" width="200px"></td>
+            <td><img src="imagens/trapezoid.png" alt="Trapézio" height="200px" width="200px"></td>
+            <td><img src="imagens/rectangle.png" alt="Retângulo" height="200px" width="200px"></td>
+        </tr>
+        <tr style="text-align: center; justify-content: space-between;">
+            <td>
+                <p>Base <input type="number" name="trianguloBase" id="trianguloBase"></p>
+                <p>Altura <input type="number" name="" id="trianguloAltura"></p>
+                <input type="button" value="Calcular" onclick="triangulo()">
+                <p>Área: <input type="text" disabled id="areaTriangulo"></p>
+            </td>
+            <td>
+                <p>Lado<input type="number" name="" id="quadradoLado"></p>
+                <br>
+                <br>
+                <input type="button" value="Calcular" onclick="quadrado()">
+                <p>Área: <input type="text" disabled id="areaQuadrado"></p>
+            </td>
+            <td>
+                <p>Raio<input type="number" name="" id="circuloRaio"></p>
+                <br>
+                <br>
+                <input type="button" value="Calcular" onclick="circulo()">
+                <p>Área: <input type="text" disabled id="areaCirculo"></p>
+            </td>
+            <td>
+                <p>Base Maior:<input type="number" name="trapezioBaseMaior" id="trapezioBaseMaior"></p>
+                <p>Base Menor:<input type="number" name="trapezioBaseMenor" id="trapezioBaseMenor"></p>
+                <p>Altura <input type="number" name="" id="trapezioAltura"></p>
+                <input type="button" value="Calcular" onclick="trapezio()">
+                <p>Área: <input type="text" disabled id="areaTrapezio"></p>
+            </td>
+            <td>
+                <p>Base <input type="number" name="retanguloBase" id="retanguloBase"></p>
+                <p>Altura <input type="number" name="" id="retanguloAltura"></p>
+                <input type="button" value="Calcular" onclick="retangulo()">
+                <p>Área: <input type="text" disabled id="areaRetangulo"></p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
